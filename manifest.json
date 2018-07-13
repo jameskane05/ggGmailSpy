@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "ggGmailSpy",
+    "short_name": "ggGmailSpy",
+    "version": "1.0",
+    "author": "James Kane",
+    "description": "A minimal extension which demonstrates how to create a extension with Gmail.JS and NodeJS-based bundling.",
+
+    "content_scripts": [
+        {
+            "matches": [ "*://mail.google.com/*" ],
+            "js": [
+                "src/extensionInjector.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+
+    "icons": {
+        "128": "images/logo.png"
+    },
+
+    "web_accessible_resources": [
+        "dist/extension.js"
+    ],
+
+    "permissions": [
+        "https://*/*"
+    ]
+}
